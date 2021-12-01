@@ -3,18 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 )
 
 func main() {
-	file, err := os.Open("./puzzle_input.txt")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	file, _ := os.Open("./puzzle_input.txt")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -23,11 +17,7 @@ func main() {
 	lastDepth := -1
 
 	for scanner.Scan() {
-		currentDepth, err := strconv.Atoi(scanner.Text())
-
-		if err != nil {
-			log.Fatal(err)
-		}
+		currentDepth, _ := strconv.Atoi(scanner.Text())
 
 		if lastDepth != -1 && currentDepth > lastDepth {
 			totalDepthIncreases++

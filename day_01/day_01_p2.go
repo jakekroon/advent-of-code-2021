@@ -3,18 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 )
 
 func main() {
-	file, err := os.Open("./puzzle_input.txt")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	file, _ := os.Open("./puzzle_input.txt")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -24,11 +18,7 @@ func main() {
 	var depthSlidingWindow []int
 
 	for scanner.Scan() {
-		currentDepth, err := strconv.Atoi(scanner.Text())
-
-		if err != nil {
-			log.Fatal(err)
-		}
+		currentDepth, _ := strconv.Atoi(scanner.Text())
 
 		depthSlidingWindow = append(depthSlidingWindow, currentDepth)
 
@@ -46,6 +36,7 @@ func main() {
 
 	fmt.Printf("Total depth increases %v\n", totalDepthIncreases)
 }
+
 func sum(slice []int) int {
 	sum := 0
 	for _, num := range slice {
