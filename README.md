@@ -1,5 +1,7 @@
 # 🎄 Advent of Code 2021 🎄
 
+<p align="center"><img style="height:60%; width: auto;" src="https://i.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.webp"/></p>
+
 ## Overview
 
 | Day                                        | Name | Stars |
