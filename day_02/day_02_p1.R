@@ -1,5 +1,5 @@
 input <- read.table('puzzle_input.txt')
 
-sum(input[input$V1 == 'forward',]$V2) *
-  (sum(input[input$V1 == 'down',]$V2) -
-   sum(input[input$V1 == 'up',]$V2))
+sum(input$V2[input$V1 == 'forward']) *
+   (sum(input$V2[input$V1 == 'down']) -
+    sum(input$V2[input$V1 == 'up']))
