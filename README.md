@@ -7,7 +7,7 @@
 | Day                                        | Name | Stars |
 | ------------------------------------------ | ---- | ----- |
 | [01](https://adventofcode.com/2021/day/1)  |   Sonar Sweep   |  ⭐⭐  |
-<!-- | [02](https://adventofcode.com/2021/day/2)  |      | ⭐  |
+| [02](https://adventofcode.com/2021/day/2)  |   Dive!   |  ⭐⭐ |
 | [03](https://adventofcode.com/2021/day/3)  |      |   |
 | [04](https://adventofcode.com/2021/day/4)  |      |   |
 | [05](https://adventofcode.com/2021/day/5)  |      |   |
