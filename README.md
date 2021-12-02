@@ -4,6 +4,8 @@
 
 ## Overview
 
+I'm attempting Advent of Code in Go and sometimes, additionally R when the mood strikes.
+
 | Day                                        | Name | Stars |
 | ------------------------------------------ | ---- | ----- |
 | [01](https://adventofcode.com/2021/day/1)  |   Sonar Sweep   |  ⭐⭐  |
