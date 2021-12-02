@@ -67,6 +67,7 @@ Your goal now is to count the number of times the sum of measurements in this sl
 
 In the above example, the sum of each three-measurement window is as follows:
 
+```
 A: 607 (N/A - no previous sum)
 B: 618 (increased)
 C: 618 (no change)
@@ -75,6 +76,7 @@ E: 647 (increased)
 F: 716 (increased)
 G: 769 (increased)
 H: 792 (increased)
+```
 
 In this example, there are 5 sums that are larger than the previous sum.
 
