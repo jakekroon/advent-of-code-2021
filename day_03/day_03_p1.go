@@ -20,9 +20,7 @@ func newBitCount() BitCount {
 	}
 }
 
-func initBitCounts(bitSlice []string) []BitCount {
-	var bitCounts []BitCount
-
+func initBitCounts(bitSlice []string) (bitCounts []BitCount) {
 	for _, num := range bitSlice {
 		bitCount := newBitCount()
 
@@ -35,11 +33,11 @@ func initBitCounts(bitSlice []string) []BitCount {
 		bitCounts = append(bitCounts, bitCount)
 	}
 
-	return bitCounts
+	return
 }
 
-func getGammaRate(bitCounts []BitCount) string {
-	gammaRate := ""
+func getGammaRate(bitCounts []BitCount) (gammaRate string) {
+	gammaRate = ""
 
 	for _, bitCount := range bitCounts {
 		if bitCount.on > bitCount.off {
@@ -50,11 +48,11 @@ func getGammaRate(bitCounts []BitCount) string {
 		gammaRate += "0"
 	}
 
-	return gammaRate
+	return
 }
 
-func getEpisolonRate(gammaRate string) string {
-	epsilonRate := ""
+func getEpisolonRate(gammaRate string) (epsilonRate string) {
+	epsilonRate = ""
 
 	for _, char := range gammaRate {
 		if char == '1' {
@@ -65,7 +63,7 @@ func getEpisolonRate(gammaRate string) string {
 		epsilonRate += "1"
 	}
 
-	return epsilonRate
+	return
 }
 
 func main() {
