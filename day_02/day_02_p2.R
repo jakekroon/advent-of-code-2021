@@ -12,4 +12,4 @@ for (ii in seq_along(input$V2)) {
   }
 }
 
-print(depth * sum(input[input$V1 == 'forward',]$V2))
+print(depth * sum(input$V2[input$V1 == 'forward']))
