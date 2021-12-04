@@ -13,4 +13,3 @@ for (ii in 1:NCOL(input)) {
 }
 
 strtoi(paste(mostCommonBits, collapse=''), base=2) * strtoi(paste(leastCommonBits, collapse=''), base=2)
-
