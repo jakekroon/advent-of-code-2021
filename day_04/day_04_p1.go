@@ -22,10 +22,9 @@ func newBingoTile(number int) BingoTile {
 	}
 }
 
-func stringsToTiles(strings []string) (bingoTiles []BingoTile) {
-	for _, character := range strings {
-		digit, _ := strconv.Atoi(character)
-		bingoTiles = append(bingoTiles, newBingoTile(digit))
+func numsToTiles(nums []int) (bingoTiles []BingoTile) {
+	for _, num := range nums {
+		bingoTiles = append(bingoTiles, newBingoTile(num))
 	}
 
 	return
@@ -56,7 +55,8 @@ func initBingoGame(bingoData string) (bingoBoards []BingoBoard, randomNumbers []
 		}
 
 		if readLine != "" {
-			bingoBoard = append(bingoBoard, stringsToTiles(strings.Fields(readLine)))
+			nums := stringsToInts(strings.Fields(readLine))
+			bingoBoard = append(bingoBoard, numsToTiles(nums))
 		}
 
 		if len(bingoBoard) == 5 {
@@ -75,24 +75,14 @@ func isBingo(bingoBoard BingoBoard) bool {
 	for i := 0; i < 5; i++ { // row
 		for j := 0; j < 5; j++ { // column
 			vertWinner = vertWinner && bingoBoard[i][j].marked
-		}
-
-		if vertWinner {
-			return vertWinner
-		}
-
-		vertWinner = true
-	}
-
-	for i := 0; i < 5; i++ { // column
-		for j := 0; j < 5; j++ { // row
 			hozWinner = hozWinner && bingoBoard[j][i].marked
 		}
 
-		if hozWinner {
-			return hozWinner
+		if vertWinner || hozWinner {
+			return true
 		}
 
+		vertWinner = true
 		hozWinner = true
 	}
 
