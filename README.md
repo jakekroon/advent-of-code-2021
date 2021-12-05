@@ -12,7 +12,7 @@ I'm attempting Advent of Code in Go and sometimes, additionally R when the mood 
 | [02](https://adventofcode.com/2021/day/2)  |   Dive!   |  ⭐⭐ |
 | [03](https://adventofcode.com/2021/day/3)  |   Binary Diagnostic   | ⭐⭐ |
 | [04](https://adventofcode.com/2021/day/4)  |   Giant Squid   | ⭐⭐ |
-| [05](https://adventofcode.com/2021/day/5)  |      |   |
+| [05](https://adventofcode.com/2021/day/5)  |   Hydrothermal Venture   | ⭐⭐ |
 | [06](https://adventofcode.com/2021/day/6)  |      |   |
 | [07](https://adventofcode.com/2021/day/7)  |      |   |
 | [08](https://adventofcode.com/2021/day/8)  |      |   |
