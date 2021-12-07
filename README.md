@@ -14,7 +14,7 @@ I'm attempting Advent of Code in Go and sometimes, additionally R when the mood 
 | [04](https://adventofcode.com/2021/day/4)  |   Giant Squid   | ⭐⭐ |
 | [05](https://adventofcode.com/2021/day/5)  |   Hydrothermal Venture   | ⭐⭐ |
 | [06](https://adventofcode.com/2021/day/6)  |   Lantern Fish   |  ⭐⭐ |
-| [07](https://adventofcode.com/2021/day/7)  |      |   |
+| [07](https://adventofcode.com/2021/day/7)  |   The Treachery of Whales   | ⭐⭐ |
 | [08](https://adventofcode.com/2021/day/8)  |      |   |
 | [09](https://adventofcode.com/2021/day/9)  |      |   |
 | [10](https://adventofcode.com/2021/day/10) |      |   |
