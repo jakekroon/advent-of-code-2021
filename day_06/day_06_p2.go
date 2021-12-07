@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func sliceAtoi(ss []string) ([]int, error) {
@@ -42,6 +43,8 @@ func getTotalFish(fishDays map[int]int) (totalFish int) {
 }
 
 func main() {
+	start := time.Now()
+
 	file, _ := os.ReadFile("./puzzle_input.txt")
 	fishInitStates, _ := sliceAtoi(strings.Split(strings.TrimSpace(string(file)), ","))
 
@@ -72,5 +75,8 @@ func main() {
 		fishDays[8] += newFish
 	}
 
+	elapsed := time.Since(start)
+
+	fmt.Printf("elapsed time %v\n", elapsed)
 	fmt.Printf("Total fish spawned: %v\n", getTotalFish(fishDays))
 }
