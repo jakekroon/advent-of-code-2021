@@ -68,20 +68,26 @@ func preProcessPattern(signalPattern []string) map[string]string {
 		signalPattern[9]: "8",
 	}
 
+	checkSegmentsLike := func(signal, num string) bool {
+		mapKey := mapKey(signalMap, num)
+		return containsSegments(signal, mapKey) && signal != mapKey
+	}
+
 	for len(signalMap) != 10 {
 		for _, signal := range signalPattern {
 			if len(signal) == 6 {
-				if containsSegments(signal, mapKey(signalMap, "4")) && signal != mapKey(signalMap, "4") {
+				if checkSegmentsLike(signal, "4") {
 					signalMap[signal] = "9"
-				} else if containsSegments(signal, mapKey(signalMap, "1")) && signal != mapKey(signalMap, "1") {
+				} else if checkSegmentsLike(signal, "1") {
 					signalMap[signal] = "0"
 				} else if mapKey(signalMap, "9") != "" && mapKey(signalMap, "0") != "" {
 					signalMap[signal] = "6"
 				}
 			} else if len(signal) == 5 {
-				if containsSegments(signal, mapKey(signalMap, "1")) && signal != mapKey(signalMap, "1") {
+				if checkSegmentsLike(signal, "1") {
 					signalMap[signal] = "3"
-				} else if containsSegments(mapKey(signalMap, "6"), signal) && signal != mapKey(signalMap, "6") {
+				} else if containsSegments(mapKey(signalMap, "6"), signal) &&
+					signal != mapKey(signalMap, "6") {
 					signalMap[signal] = "5"
 				} else if mapKey(signalMap, "3") != "" && mapKey(signalMap, "5") != "" {
 					signalMap[signal] = "2"
