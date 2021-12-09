@@ -67,7 +67,7 @@ func main() {
 					heightMap[i][j] < heightMap[i][j-1] {
 					riskLevel += heightMap[i][j] + 1
 				}
-			case j == (len(heightMap) - 1):
+			case j == (len(heightMap[i]) - 1):
 				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
 					heightMap[i][j] < heightMap[i][j-1] {
 					riskLevel += heightMap[i][j] + 1
