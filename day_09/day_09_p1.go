@@ -33,50 +33,14 @@ func main() {
 	}
 
 	riskLevel := 0
+
 	for i := range heightMap {
 		for j := range heightMap[i] {
-			switch {
-			case i == 0 && j == 0:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i][j+1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case i == (len(heightMap)-1) && j == 0:
-				if heightMap[i][j] < heightMap[i-1][j] && heightMap[i][j] < heightMap[i][j+1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case i == 0 && j == (len(heightMap[i])-1):
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i][j-1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case i == (len(heightMap)-1) && j == (len(heightMap[i])-1):
-				if heightMap[i][j] < heightMap[i-1][j] && heightMap[i][j] < heightMap[i][j-1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case i == 0:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i][j+1] &&
-					heightMap[i][j] < heightMap[i][j-1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case j == 0:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
-					heightMap[i][j] < heightMap[i][j+1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case i == (len(heightMap) - 1):
-				if heightMap[i][j] < heightMap[i-1][j] && heightMap[i][j] < heightMap[i][j+1] &&
-					heightMap[i][j] < heightMap[i][j-1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			case j == (len(heightMap[i]) - 1):
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
-					heightMap[i][j] < heightMap[i][j-1] {
-					riskLevel += heightMap[i][j] + 1
-				}
-			default:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
-					heightMap[i][j] < heightMap[i][j+1] && heightMap[i][j] < heightMap[i][j-1] {
-					riskLevel += heightMap[i][j] + 1
-				}
+			if (i == 0 || heightMap[i][j] < heightMap[i-1][j]) &&
+				(j == 0 || heightMap[i][j] < heightMap[i][j-1]) &&
+				(i == len(heightMap)-1 || heightMap[i][j] < heightMap[i+1][j]) &&
+				(j == len(heightMap[i])-1 || heightMap[i][j] < heightMap[i][j+1]) {
+				riskLevel += heightMap[i][j] + 1
 			}
 		}
 	}

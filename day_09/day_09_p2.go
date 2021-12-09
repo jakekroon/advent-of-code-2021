@@ -23,54 +23,13 @@ func sliceAtoi(ss []string) ([]int, error) {
 }
 
 func findMinimumDepths(heightMap [][]int) (minDepthCoords [][]int) {
-	addMinDepthCoords := func(x, y int) {
-		minDepthCoords = append(minDepthCoords, []int{x, y})
-	}
-
 	for i := range heightMap {
 		for j := range heightMap[i] {
-			switch {
-			case i == 0 && j == 0:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i][j+1] {
-					addMinDepthCoords(i, j)
-				}
-			case i == (len(heightMap)-1) && j == 0:
-				if heightMap[i][j] < heightMap[i-1][j] && heightMap[i][j] < heightMap[i][j+1] {
-					addMinDepthCoords(i, j)
-				}
-			case i == 0 && j == (len(heightMap[i])-1):
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i][j-1] {
-					addMinDepthCoords(i, j)
-				}
-			case i == (len(heightMap)-1) && j == (len(heightMap[i])-1):
-				if heightMap[i][j] < heightMap[i-1][j] && heightMap[i][j] < heightMap[i][j-1] {
-					addMinDepthCoords(i, j)
-				}
-			case i == 0:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i][j+1] &&
-					heightMap[i][j] < heightMap[i][j-1] {
-					addMinDepthCoords(i, j)
-				}
-			case j == 0:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
-					heightMap[i][j] < heightMap[i][j+1] {
-					addMinDepthCoords(i, j)
-				}
-			case i == (len(heightMap) - 1):
-				if heightMap[i][j] < heightMap[i-1][j] && heightMap[i][j] < heightMap[i][j+1] &&
-					heightMap[i][j] < heightMap[i][j-1] {
-					addMinDepthCoords(i, j)
-				}
-			case j == (len(heightMap[i]) - 1):
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
-					heightMap[i][j] < heightMap[i][j-1] {
-					addMinDepthCoords(i, j)
-				}
-			default:
-				if heightMap[i][j] < heightMap[i+1][j] && heightMap[i][j] < heightMap[i-1][j] &&
-					heightMap[i][j] < heightMap[i][j+1] && heightMap[i][j] < heightMap[i][j-1] {
-					addMinDepthCoords(i, j)
-				}
+			if (i == 0 || heightMap[i][j] < heightMap[i-1][j]) &&
+				(j == 0 || heightMap[i][j] < heightMap[i][j-1]) &&
+				(i == len(heightMap)-1 || heightMap[i][j] < heightMap[i+1][j]) &&
+				(j == len(heightMap[i])-1 || heightMap[i][j] < heightMap[i][j+1]) {
+				minDepthCoords = append(minDepthCoords, []int{i, j})
 			}
 		}
 	}
