@@ -19,7 +19,7 @@ I'm attempting Advent of Code in Go and sometimes, additionally R when the mood 
 | [09](https://adventofcode.com/2021/day/9)  |   Smoke Basin   |  ⭐⭐ |
 | [10](https://adventofcode.com/2021/day/10) |   Syntax Scoring   | ⭐⭐ |
 | [11](https://adventofcode.com/2021/day/11) |   Dumbo Octopus   | ⭐⭐ |
-| [12](https://adventofcode.com/2021/day/12) |      |   |
+| [12](https://adventofcode.com/2021/day/12) |   Passage Pathing   | ⭐⭐ |
 | [13](https://adventofcode.com/2021/day/13) |      |   |
 | [14](https://adventofcode.com/2021/day/14) |      |   |
 | [15](https://adventofcode.com/2021/day/15) |      |   |
