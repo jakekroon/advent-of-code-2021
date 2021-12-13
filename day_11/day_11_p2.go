@@ -24,7 +24,7 @@ func sliceAtoi(ss []string) ([]int, error) {
 }
 
 func getOctopusStartGrid(input string) (grid OctopusGrid) {
-	file, _ := os.Open("./puzzle_input.txt")
+	file, _ := os.Open(input)
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
